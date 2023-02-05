@@ -1,5 +1,6 @@
 ## Projets Node.js
 
+#### Description
 Ce dépôt comporte trois projets effectués dans un cadre scolaire. Tous comportent un côté serveur et un côté client. Le premier est très simple. Les deux sites transactionnels sont beaucoup plus complexes et se basent sur un cours d'OpenClassrooms intitulé: *"Passez au Full Stack avec Node.js, Express et MongoDB"* au lien ci-dessous:
 
 Lien: https://openclassrooms.com/fr/courses/6390246-passez-au-full-stack-avec-node-js-express-et-mongodb
