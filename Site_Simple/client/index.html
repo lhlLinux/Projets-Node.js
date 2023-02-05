@@ -1,0 +1,104 @@
+<!-- Équipe: Maher Khaznaji et Linus Levi -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ASCII">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://127.0.0.1:4200/styles.css" rel="stylesheet">   
+</head>
+    <title>Projet 1</title>
+</head>
+<body>
+    <header> 
+        <div class="panneau">
+            <p class="titre">Projet 1</p>
+            <p>L'informatique, ca pollue!</p>
+        </div>
+        <nav class="links"> <!-- La barre de navigation -->
+            <ul>
+                <li><a href="#" id="0">Accueil</a></li>
+                <li><a href="#" id="1">Fabrication</a></li>
+                <li><a href="#" id="2">Utilisation</a></li>
+                <li><a href="#" id="3">Elimination</a></li>
+                <li><a href="#" id="4">Solution</a></li>
+            </ul> 
+        </nav>
+    </header>
+	<main>  
+		<article id="article">
+			<!-- Le contenu s'affichera ici -->
+        </article>
+        <aside>  <!-- Ceci est le panneau de droite comportant la météo -->
+			<h1>M&eacute;t&eacute;o</h1>
+			<h4 class="lieu">Montreal</h4>
+			<p id="date"><!-- La vrai date sera affichée ici --></p>
+			<h4 class="temp">Temperature: 19.5 °C</h4>
+			<img class="img_meteo" alt="weather" src="http://127.0.0.1:4200/images/clouds.png">
+			<h1>Recherche</h1>
+			<div class="recherche">
+				<input type="text" id="searchbox" placeholder="Rechercher...">
+				<img alt="loupe" src="http://127.0.0.1:4200/images/loupe.png">
+			</div>
+		</aside>    
+    </main>
+    <footer>
+        <p class="copyright">
+        COPYRIGHT &copy; MAHER KHAZNAJI &amp; LINUS LEVI, 2022 - TOUS DROITS R&Eacute;SERV&Eacute;S
+        </p>
+    </footer>
+</body>
+
+<script>
+    function element( id ) { return document.getElementById( id ); } // fonction abrégée
+    
+    const root = "http://127.0.0.1:4200/";
+	const article = element("article");
+	const champ_date = element("date");
+	let premier_chargement = true;
+	
+	// On construit notre liste de références aux boutons de la barre de navigation
+	const boutons_navigation = [
+		element("0"), // Accueil
+		element("1"), // Fabrication
+		element("2"), // Utilisation
+		element("3"), // Elimination
+		element("4")  // Solution
+	];
+	
+	function bouton_onClick(event)
+	{
+		// Un peu de bricolage. Nécessaire pour le premier chargement de la page.
+		let chaine = "";
+		if (premier_chargement === true)
+			chaine = root + "0";
+		else
+			chaine = root + event.target.id;
+
+		fetch( chaine, // on combine tout simplement la racine et l'id du bouton
+        {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin' // include, *same-origin, omit
+        })
+        .then( data => { return data.text(); })
+        // Rendu ici, on affiche le contenu dans la balise
+        .then( data => { article.innerHTML = data; })
+		.catch( error => { article.innerHTML = error; });
+	}
+	
+	// On lie l'event listener ci-dessus à chacun des boutons
+    for (let bouton of boutons_navigation)
+		bouton.addEventListener("click", (event)=>bouton_onClick(event) );
+
+	// On veut que le premier chargement affiche la page d'accueil
+	bouton_onClick("none"); // rien à passer mais la fonction demande quelquechose tout de même
+	premier_chargement = false; // on finit par établir le cheminement normal dorénavant
+	
+	// On termine par afficher la date actuelle
+	let date = new Date();
+	champ_date.innerHTML = `Date: ${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`;
+</script>
+</html>

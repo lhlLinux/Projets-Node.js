@@ -1,0 +1,168 @@
+/* Équipe: Maher Khaznaji et Linus Levi */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Pour qu'un rectangle puisse inclure sa bordure dans sa taille totale */
+}  
+
+body {
+    font-family: sans-serif;
+    height: 100vh;
+    display: block; /* pour header, main et footer */
+    background-color: rgb(24, 24, 24);
+}
+
+header p {
+	font-size: 14px;
+}
+
+h1, h2 {
+	color: rgb(80, 80, 80);
+	margin-top: 8px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	color: rgb(220, 50, 50);
+}
+
+.panneau {
+    color: rgb(245, 245, 245);
+    display: block;
+    background-image: url('http://127.0.0.1:4200/images/entete.png' );
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: 100%;
+    padding-top: 64px;
+    padding-bottom: 88px;
+    padding-left: 160px;
+}
+
+.titre {
+	font-size: 32px; 
+}
+
+nav ul {
+	width: 85%;
+	display: flex;
+	justify-content: right;
+    align-items: center;
+	list-style: none;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+nav li a {
+	font-size: 14px;
+	font-weight: bolder;
+	text-decoration: none;
+	color: rgb(200, 200, 200);
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+nav li a:hover {
+    color: rgb(0, 180, 170);
+    cursor: pointer;
+}
+
+main {
+	background-color: white;
+    min-height: 480px;
+    padding: 15px;
+    margin-left: 128px;
+    margin-right: 128px;
+    display: flex; /* pour article et aside */
+}
+
+article {
+	background-color: rgb(230, 240, 240);
+    padding: 20px;
+}
+
+article ul {
+	margin: 20px 0px 20px 0px;
+}
+
+article p, article ul {
+	font-size: 16px;
+	color: rgb(80, 80, 80);
+	line-height: 28px;
+}
+
+article ul {
+	list-style: none;
+}
+
+article ul li::before {
+	content: url('http://127.0.0.1:4200/images/bullet.png' );
+	font-weight: bolder;
+	color: CornflowerBlue;
+	margin-right: 24px;
+}
+
+article img {
+	margin-top: 28px;
+	margin-bottom: 28px;
+}
+
+aside {
+	background-color: rgb(225, 225, 225);
+	display: block;
+	padding: 20px;
+}
+
+aside .lieu {
+	color: rgb(220, 50, 50);
+	margin-bottom: 4px;
+}
+
+aside #date {
+	color: grey;
+}
+
+aside .temp {
+	color: rgb(128, 128, 128);
+	margin-top: 8px;
+}
+
+.img_meteo {
+	padding: 30px;
+}
+
+.recherche {
+	display: flex;
+	align-items: center; /* alignement à la verticale */
+}
+
+.recherche img {
+	margin-left: 16px;
+	margin-right: 8px;
+	width: 32px;
+	height: 32px;
+}
+
+.recherche input {
+    width: 160px;
+    height: 26px;
+    font-size: 14px;
+	font-weight: bolder;
+	color: rgb(128, 128, 128);
+    border-radius: 2px; /* on adouci légèrement les bords */
+	border: none;
+    outline: none;
+  	/* un peu d'espace pour garder le text à l'écart des deux bords */
+  	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.copyright { /* se trouve dans le footer */
+    font-size: 14px;
+	color: rgb(220, 220, 220);
+	text-align: center;
+	margin-top: 16px;
+	margin-bottom: 56px;
+}
+
+  
