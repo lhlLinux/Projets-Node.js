@@ -10,15 +10,15 @@ Le produit final est un site web transactionnel permettant d'ajouter des produit
 #### Captures
 
 Premier site:
-![captureA](/site1a.jpg "captureA")
-![captureB](/site1b.jpg "captureB")
+![captureA](/site1a.png "captureA")
+![captureB](/site1b.png "captureB")
 
 Deuxième site:
 
-![captureA](/site2a.jpg "captureA")
-![captureB](/site2b.jpg "captureB")
-![captureC](/site2c.jpg "captureC")
-![captureD](/site2d.jpg "captureD")
+![captureA](/site2a.png "captureA")
+![captureB](/site2b.png "captureB")
+![captureC](/site2c.png "captureC")
+![captureD](/site2d.png "captureD")
 
 **Note**: le troisième site est pratiquement identique à celui-ci, la seule différence étant une mechanisme d'authentification.
 
